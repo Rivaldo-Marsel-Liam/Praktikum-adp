@@ -1,7 +1,9 @@
 def cek_tiga_selisih_sama(kelompok):
-    for i in range(len(kelompok) - 2):
+    i = 0
+    while i < len(kelompok) - 2:
         if (kelompok[i+1] - kelompok[i]) == (kelompok[i+2] - kelompok[i+1]):
             return True
+        i = i + 1
     return False
 
 def proses_bilangan(arr):
@@ -23,8 +25,14 @@ def validasi_kelompok(kelompok):
     return True
 
 #Program Utama
-data = list(map(int, input("Masukkan bilangan: ").split()))
-
+try:
+    data = list(map(float, input("Masukkan bilangan (pisahkan dengan spasi): ").split()))
+    if not data:
+        print("Eror: Input tidak boleh kosong")
+        exit()
+except ValueError:
+    print("eror :input harus berupa bilangan (angka)")
+    exit()
 naik, turun = proses_bilangan(data)
 
 hasil = {}
