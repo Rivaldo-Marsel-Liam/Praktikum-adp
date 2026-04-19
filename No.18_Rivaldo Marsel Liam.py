@@ -25,7 +25,7 @@ def validasi_kelompok(kelompok):
     return True
 
 #Program Utama
-data = list(map(int, input("Masukkan bilangan: ").split()))
+data = list(map(float, input("Masukkan bilangan(pisahkan dengan spasi): ").split()))
 
 naik, turun = proses_bilangan(data)
 
